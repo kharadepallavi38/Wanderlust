@@ -22,7 +22,7 @@ const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL;
-const PORT = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 main()
   .then(() => {
@@ -101,6 +101,6 @@ app.use((err, req, res, next) => {
   return res.status(statusCode).render("error.ejs", { message });
 });
 
-app.listen(PORT,'0.0.0.0', () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port,'0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
 });
